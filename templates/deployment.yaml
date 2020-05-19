@@ -5,9 +5,7 @@ metadata:
   labels:
     {{- include "SampleHelmChart.labels" . | nindent 4 }}
 spec:
-{{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
-{{- end }}
   selector:
     matchLabels:
       {{- include "SampleHelmChart.selectorLabels" . | nindent 6 }}
